@@ -37,5 +37,9 @@ public:
 	void sendMsg(string msgTo, string msgFrom, string& msg);
 private:
 	std::vector<Message>* msgBase;
+#ifdef _MSC_VER
+	string MBPath = "msg_base.dat";
+#else
 	string MBPath = "/var/lib/Chat/msg_base.dat";
+#endif // _MSC_VER
 };

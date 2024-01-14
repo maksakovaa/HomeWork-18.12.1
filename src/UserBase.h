@@ -40,5 +40,9 @@ public:
 private:
 	std::vector<User>* usrBase;
 	SHA256 sha256;
-	std::string UBPath = "/var/lib/Chat/users.dat";
+#ifdef _MSC_VER
+	string UBPath = "users.dat";
+#else
+	string UBPath = "/var/lib/Chat/users.dat";
+#endif
 };
